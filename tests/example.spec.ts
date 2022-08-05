@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 test("test", async ({ browser }) => {
   // Go to https://en.wikipedia.org/wiki/Main_Page
   const context = await browser.newContext({ recordVideo: { dir: "videos/" } });
-
+  await context.tracing.start({ screenshots: true, snapshots: true });
   const page = await context.newPage()
   // Make sure to await close, so that videos are saved.
   await page.goto("https://en.wikipedia.org/wiki/Main_Page");
@@ -30,5 +30,6 @@ test("test", async ({ browser }) => {
   await page.screenshot({ path: "screenshots/wiki_test.png" });
 
   await expect(await page.locator("text=Playwright1234")).toBeVisible();
+  await context.tracing.stop({ path: 'trace.zip' });
   await context.close();
 });
