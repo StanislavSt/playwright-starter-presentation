@@ -1,0 +1,23 @@
+{
+  "name": "playwright-starter-presentation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StanislavSt/playwright-starter-presentation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StanislavSt/playwright-starter-presentation/issues"
+  },
+  "homepage": "https://github.com/StanislavSt/playwright-starter-presentation#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.24.2"
+  }
+}
